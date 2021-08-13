@@ -1,0 +1,33 @@
+Config { font = "xft:JetBrains Mono:pixelsize=11:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:mononoki Nerd Font:pixelsize:11:antialias=true:hinting=true"
+       ,                     "xft:Font Awesome 5 Free solid:pixelsize=13"
+       ,                     "xft:Font Awesome 5 brands:pixelsize=13"
+       ]
+       , bgColor = "#002635"
+       , fgColor = "#e6e6dc"
+       , position = Top
+       , lowerOnStart = True
+       , hideOnStart = False
+       , allDesktops = True
+       , persistent = True
+       , commands = [
+                    -- Mixer
+                      Run Alsa "default" "Master" ["-t","<fn=2>\xf028</fn> Volume: <volume>% <volumevbar>"]
+                    -- Time and date
+                    , Run Date "<fn=2>\xf073</fn>  %b %d %Y - [%H:%M] " "date" 50
+                      -- Network up and down
+                    , Run Network "enp1s0" ["-t", "<fn=2>\xf35b</fn>  <rx>kb  <fn=2>\xf358</fn>  <tx>kb"] 20
+                      -- Cpu usage in percent
+                    , Run Cpu ["-t", "<fn=2>\xf2db</fn>  cpu: [<total>%]","-H","50","--high","red"] 20
+                      -- Ram used number and percent
+                    , Run Memory ["-t", "<fn=2>\xf233</fn>  ram: <used>M [<usedratio>%]"] 20
+                      -- Disk space free
+                    , Run DiskU [("/", "<fn=2>\xf0c7</fn>  drive: <free> free")] [] 60
+                      -- Runs a standard shell command 'uname -r' to get kernel version
+                    , Run Com "uname" ["-r"] "" 3600
+                    , Run UnsafeStdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " <icon=haskell_20.xpm/>   <fc=#666666>|</fc> %UnsafeStdinReader% }{    <box type=Bottom width=2 color=#51afef><fc=#51afef> <action=`alacritty -e pacmixer`>%alsa:default:Master%</action> </fc></box>  |  <box type=Bottom width=2 color=#ecbe7b><fc=#ecbe7b><action=`alacritty -e htop`>%cpu%</action></fc></box>  |  <box type=Bottom width=2 color=#ff6c6b><fc=#ff6c6b><action=`alacritty -e htop`>%memory%</action></fc></box>  |  <box type=Bottom width=2 color=#a9a1e1><fc=#a9a1e1><action=`alacritty -e htop`>%disku%</action></fc></box>  |  <box type=Bottom width=2 color=#98be65><fc=#98be65><action=`alacritty -e sudo iftop`>%enp1s0%</action></fc></box>  |  <box type=Bottom width=2 color=#46d9ff><fc=#46d9ff><action=`emacsclient -c -a 'emacs' --eval '(doom/window-maximize-buffer(dt/year-calendar))'`>%date%</action></fc></box>  |  <box type=Bottom width=2 color=#51afef><fc=#51afef><fn=3></fn>  <action=`alacritty -e htop`>%uname%</action> </fc></box>    "
+       }
