@@ -2,4 +2,4 @@
 	email = srylax@srylax.dev
 	name = Srylax
 [credential]
-	helper = cache
+	helper = manager
