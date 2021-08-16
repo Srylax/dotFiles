@@ -242,8 +242,9 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do
 	spawnOnce "picom &"
-	spawn "python ~/.local/bin/wal -i $(find ~/Pictures/Wallpapers/ -type f | sort -R | tail -1) &"
+	spawn "wal -i $(find ~/Pictures/Wallpapers/ -type f | shuf -n 1) &"
 	spawn "python ~/.local/bin/razer-cli -e multicolor,xpalette &"
+  spaen "pywalfox update &"
 	setWMName "LG3D"
 
 
