@@ -244,7 +244,7 @@ myStartupHook = do
 	spawnOnce "picom &"
 	spawn "wal -i $(find ~/Pictures/Wallpapers/ -type f | shuf -n 1) &"
 	spawn "python ~/.local/bin/razer-cli -e multicolor,xpalette &"
-  spaen "pywalfox update &"
+  spawn "pywalfox update &"
 	setWMName "LG3D"
 
 
