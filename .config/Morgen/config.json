@@ -1,0 +1,37 @@
+{
+	"theme": "dark",
+	"timeGridStart": "06:00:00",
+	"timeGridEnd": "22:00:00",
+	"timeZone": "Europe/Zurich",
+	"locale": "en-gb",
+	"winBounds": {
+		"x": 1288,
+		"y": 56,
+		"width": 1256,
+		"height": 676
+	},
+	"zoomFactor": 1,
+	"firstDayOfTheWeek": 0,
+	"secondaryTimeZones": [],
+	"recentTimeZones": [],
+	"defaultCalendarView": "timeGridWeek",
+	"weekendsVisible": true,
+	"slotDuration": "00:30:00",
+	"snapDuration": "00:15:00",
+	"dayMaxEvents": 4,
+	"launchAutomatically": true,
+	"keepInBackground": true,
+	"useLinuxNativeNotifications": true,
+	"globalToggleWindow": true,
+	"globalToggleWindowShortcut": "CtrlOrCmd+Space",
+	"defaultCalendar": "auto",
+	"selectedTaskList": null,
+	"showCompletedTasks": false,
+	"sortTasksBy": "myOrder",
+	"sidebarOpen": false,
+	"autoLauncher": "hidden",
+	"userGroups": {
+		"groups": [],
+		"updated": "2021-11-12T20:30:56+01:00"
+	}
+}

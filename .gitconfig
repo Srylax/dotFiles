@@ -1,5 +1,9 @@
 [user]
-	email = srylax@srylax.dev
-	name = Srylax
+	email = kylian.lichtensteiger@gmail.com
+	name = Kylian Lichtensteiger
 [credential]
 	helper = manager
+[core]
+	editor = atom -w
+[mergetool]
+	keepBackup = false

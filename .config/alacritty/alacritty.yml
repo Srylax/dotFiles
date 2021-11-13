@@ -391,7 +391,7 @@ shell:
    args:
      - --login
      - --init-command
-     - neofetch
+     - colorscript random
 
 
 # Startup directory
